@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://mzc421.github.io/sitemap.xml
