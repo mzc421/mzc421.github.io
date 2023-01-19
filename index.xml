@@ -16,5 +16,14 @@
       <description>random模块简介 Python标准库中的random函数，可以生成随机浮点数、整数、字符串，甚至帮助你随机选择列表序列中的一个元素，打乱一</description>
     </item>
     
+    <item>
+      <title>关于</title>
+      <link>https://mzc421.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mzc421.github.io/about/</guid>
+      <description>本人从事自然语言处理和图像处理 本博客主要介绍在日常工作中遇到的问题、一些模型的使用以及分享</description>
+    </item>
+    
   </channel>
 </rss>
