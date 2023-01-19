@@ -6,7 +6,16 @@
     <description>Recent content on 木子川的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 Jan 2023 01:11:35 +0800</lastBuildDate><atom:link href="https://mzc421.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jan 2023 20:36:30 +0800</lastBuildDate><atom:link href="https://mzc421.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pygame使用二:Pygame最小开发框架</title>
+      <link>https://mzc421.github.io/post/02-pygame%E4%BD%BF%E7%94%A8%E4%BA%8Cpygame%E6%9C%80%E5%B0%8F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Tue, 17 Jan 2023 20:36:30 +0800</pubDate>
+      
+      <guid>https://mzc421.github.io/post/02-pygame%E4%BD%BF%E7%94%A8%E4%BA%8Cpygame%E6%9C%80%E5%B0%8F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</guid>
+      <description>最小开发框架代码 根据Pygame的最小开发框架可以写出各种各样的内容，直接在框架里面进行添加。 1 2 3 4 5 6 7 8 9 10 11 12 import sys import pygame pygame.init() size=w,h = (800,600) screen = pygame.display.set_mode(size)</description>
+    </item>
+    
     <item>
       <title>Pygame使用一:Python库 Random介绍</title>
       <link>https://mzc421.github.io/post/01-pygame%E4%BD%BF%E7%94%A8%E4%B8%80python%E5%BA%93random%E4%BB%8B%E7%BB%8D/</link>

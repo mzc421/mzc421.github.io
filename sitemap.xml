@@ -3,21 +3,49 @@
   
   <url>
     <loc>https://mzc421.github.io/categories/</loc>
-    <lastmod>2023-01-16T01:11:35+08:00</lastmod>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://mzc421.github.io/post/</loc>
-    <lastmod>2023-01-16T01:11:35+08:00</lastmod>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://mzc421.github.io/tags/pygame%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2023-01-16T01:11:35+08:00</lastmod>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/categories/pygame%E4%BD%BF%E7%94%A8%E4%BA%8C/</loc>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/post/02-pygame%E4%BD%BF%E7%94%A8%E4%BA%8Cpygame%E6%9C%80%E5%B0%8F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/tags/</loc>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/</loc>
+    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,20 +59,6 @@
   
   <url>
     <loc>https://mzc421.github.io/post/01-pygame%E4%BD%BF%E7%94%A8%E4%B8%80python%E5%BA%93random%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2023-01-16T01:11:35+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mzc421.github.io/tags/</loc>
-    <lastmod>2023-01-16T01:11:35+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mzc421.github.io/</loc>
     <lastmod>2023-01-16T01:11:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
