@@ -6,7 +6,16 @@
     <description>Recent content in Pygame使用 on 木子川的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Jan 2023 20:36:30 +0800</lastBuildDate><atom:link href="https://mzc421.github.io/tags/pygame%E4%BD%BF%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Jan 2023 21:37:43 +0800</lastBuildDate><atom:link href="https://mzc421.github.io/tags/pygame%E4%BD%BF%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pygame使用三:Pygame小游戏（接球小游戏）</title>
+      <link>https://mzc421.github.io/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Wed, 18 Jan 2023 21:37:43 +0800</pubDate>
+      
+      <guid>https://mzc421.github.io/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/</guid>
+      <description>介绍模块 本游戏使用的是由Pycharm中的pygame模块来实现的，也可以在python中运行。 最小开发框架 Pygame最小开发框架详细介绍</description>
+    </item>
+    
     <item>
       <title>Pygame使用二:Pygame最小开发框架</title>
       <link>https://mzc421.github.io/post/02-pygame%E4%BD%BF%E7%94%A8%E4%BA%8Cpygame%E6%9C%80%E5%B0%8F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</link>

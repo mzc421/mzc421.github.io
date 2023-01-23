@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pygame使用三 on 木子川的个人博客</title>
+    <link>https://mzc421.github.io/categories/pygame%E4%BD%BF%E7%94%A8%E4%B8%89/</link>
+    <description>Recent content in Pygame使用三 on 木子川的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Jan 2023 21:37:43 +0800</lastBuildDate><atom:link href="https://mzc421.github.io/categories/pygame%E4%BD%BF%E7%94%A8%E4%B8%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pygame使用三:Pygame小游戏（接球小游戏）</title>
+      <link>https://mzc421.github.io/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Wed, 18 Jan 2023 21:37:43 +0800</pubDate>
+      
+      <guid>https://mzc421.github.io/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/</guid>
+      <description>介绍模块 本游戏使用的是由Pycharm中的pygame模块来实现的，也可以在python中运行。 最小开发框架 Pygame最小开发框架详细介绍</description>
+    </item>
+    
+  </channel>
+</rss>

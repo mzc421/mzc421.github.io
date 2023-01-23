@@ -2,22 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mzc421.github.io/categories/</loc>
-    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <loc>https://mzc421.github.io/post/</loc>
+    <lastmod>2023-01-23T22:50:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://mzc421.github.io/post/</loc>
-    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <loc>https://mzc421.github.io/post/04-%E5%AE%8C%E5%85%A8%E5%BC%84%E6%87%82%E5%A6%82%E4%BD%95%E7%94%A8pycharm%E5%AE%89%E8%A3%85pyqt5%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2023-01-23T22:50:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/</loc>
+    <lastmod>2023-01-23T22:50:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/categories/</loc>
+    <lastmod>2023-01-18T21:37:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://mzc421.github.io/tags/pygame%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
+    <lastmod>2023-01-18T21:37:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/categories/pygame%E4%BD%BF%E7%94%A8%E4%B8%89/</loc>
+    <lastmod>2023-01-18T21:37:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2023-01-18T21:37:43+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://mzc421.github.io/tags/</loc>
+    <lastmod>2023-01-18T21:37:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,20 +66,6 @@
   
   <url>
     <loc>https://mzc421.github.io/post/02-pygame%E4%BD%BF%E7%94%A8%E4%BA%8Cpygame%E6%9C%80%E5%B0%8F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mzc421.github.io/tags/</loc>
-    <lastmod>2023-01-17T20:36:30+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://mzc421.github.io/</loc>
     <lastmod>2023-01-17T20:36:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
