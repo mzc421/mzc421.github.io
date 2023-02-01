@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Win10最详细tensorflow GPU环境的安装（安装anaconda、CUDA、CUDANN）</title>
+      <link>https://mzc421.github.io/post/05-win10%E6%9C%80%E8%AF%A6%E7%BB%86tensorflow-gpu%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85anacondacudacudann/</link>
+      <pubDate>Fri, 20 Jan 2023 23:10:05 +0800</pubDate>
+      
+      <guid>https://mzc421.github.io/post/05-win10%E6%9C%80%E8%AF%A6%E7%BB%86tensorflow-gpu%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85anacondacudacudann/</guid>
+      <description>一、准备工作 1、确定自己的电脑上能够配置GPU环境。 方法：打开控制面板，找到设备管理器 找到显示适配器，查看GPU算力，可以根据显卡算力下载相</description>
+    </item>
+    
+    <item>
       <title>Pygame使用三:Pygame小游戏（接球小游戏）</title>
       <link>https://mzc421.github.io/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/</link>
       <pubDate>Wed, 18 Jan 2023 21:37:43 +0800</pubDate>

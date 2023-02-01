@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Win10最详细tensorflow GPU环境的安装（安装anaconda、CUDA、CUDANN） - 木子川的个人博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="木子川" /><meta name="description" content="一、准备工作 1、确定自己的电脑上能够配置GPU环境。 方法：打开控制面板，找到设备管理器 找到显示适配器，查看GPU算力，可以根据显卡算力下载相" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.92.2 with theme even" />
+
+
+<link rel="canonical" href="https://mzc421.github.io/post/05-win10%E6%9C%80%E8%AF%A6%E7%BB%86tensorflow-gpu%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85anacondacudacudann/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Win10最详细tensorflow GPU环境的安装（安装anaconda、CUDA、CUDANN）" />
+<meta property="og:description" content="一、准备工作 1、确定自己的电脑上能够配置GPU环境。 方法：打开控制面板，找到设备管理器 找到显示适配器，查看GPU算力，可以根据显卡算力下载相" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mzc421.github.io/post/05-win10%E6%9C%80%E8%AF%A6%E7%BB%86tensorflow-gpu%E7%8E%AF%E5%A2%83%E7%9A%84%E5%AE%89%E8%A3%85%E5%AE%89%E8%A3%85anacondacudacudann/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-01-20T23:10:05+08:00" />
+<meta property="article:modified_time" content="2023-01-20T23:10:05+08:00" />
+
+<meta itemprop="name" content="Win10最详细tensorflow GPU环境的安装（安装anaconda、CUDA、CUDANN）">
+<meta itemprop="description" content="一、准备工作 1、确定自己的电脑上能够配置GPU环境。 方法：打开控制面板，找到设备管理器 找到显示适配器，查看GPU算力，可以根据显卡算力下载相"><meta itemprop="datePublished" content="2023-01-20T23:10:05+08:00" />
+<meta itemprop="dateModified" content="2023-01-20T23:10:05+08:00" />
+<meta itemprop="wordCount" content="2588">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Win10最详细tensorflow GPU环境的安装（安装anaconda、CUDA、CUDANN）"/>
+<meta name="twitter:description" content="一、准备工作 1、确定自己的电脑上能够配置GPU环境。 方法：打开控制面板，找到设备管理器 找到显示适配器，查看GPU算力，可以根据显卡算力下载相"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">木子川的个人博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">类别</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">木子川的个人博客</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">类别</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Win10最详细tensorflow GPU环境的安装（安装anaconda、CUDA、CUDANN）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-01-20 </span>
+        
+          <span class="more-meta"> 约 2588 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一准备工作">一、准备工作</a>
+      <ul>
+        <li><a href="#1确定自己的电脑上能够配置gpu环境">1、确定自己的电脑上能够配置GPU环境。</a></li>
+        <li><a href="#2在tensorflow官网找到对应的版本">2、在Tensorflow官网找到对应的版本</a></li>
+      </ul>
+    </li>
+    <li><a href="#二安装anaconda">二、安装anaconda</a>
+      <ul>
+        <li><a href="#1安装anaconda的好处主要为以下几点">1、安装Anaconda的好处主要为以下几点</a></li>
+        <li><a href="#2下载">2、下载</a></li>
+        <li><a href="#3安装">3、安装</a></li>
+        <li><a href="#4创建一个虚拟环境">4、创建一个虚拟环境</a></li>
+        <li><a href="#5安装jupyter-notebook">5、安装Jupyter Notebook</a></li>
+      </ul>
+    </li>
+    <li><a href="#三安装cuda">三、安装CUDA</a></li>
+    <li><a href="#四安装cudann">四、安装CUDANN</a>
+      <ul>
+        <li><a href="#1下载方法1">1、下载方法1</a></li>
+        <li><a href="#2下载方法2">2、下载方法2</a></li>
+        <li><a href="#3进行环境变量的配置">3、进行环境变量的配置</a>
+          <ul>
+            <li><a href="#1cudnn-101-windows10-x64-v76064cudabin">（1）cudnn-10.1-windows10-x64-v7.6.0.64/cuda/bin</a></li>
+            <li><a href="#2cudnn-101-windows10-x64-v76064cudainclude">（2）cudnn-10.1-windows10-x64-v7.6.0.64/cuda/include/</a></li>
+            <li><a href="#3cudnn-101-windows10-x64-v76064cudalibx64">（3）cudnn-10.1-windows10-x64-v7.6.0.64/cuda/lib/x64</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#五最后现象">五、最后现象</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="一准备工作">一、准备工作</h1>
+<h2 id="1确定自己的电脑上能够配置gpu环境">1、确定自己的电脑上能够配置GPU环境。</h2>
+<p>方法：打开控制面板，找到设备管理器
+<img src="/img/05/01.png" alt="图片"></p>
+<p>找到<strong>显示适配器</strong>，查看GPU算力，可以根据显卡算力下载相应CUDA和CUDNN
+<img src="/img/05/02.png" alt="图片"></p>
+<p>查看GPU的型号以及算力  <a href="https://developer.nvidia.com/cuda-gpus">https://developer.nvidia.com/cuda-gpus</a></p>
+<p>小技巧：对于现在的电脑，一般来说都是由GPU环境的，也是可以使用GPU的。所以这一步就不是很重要，接下来的一步就非常非常重要</p>
+<h2 id="2在tensorflow官网找到对应的版本">2、在Tensorflow官网找到对应的版本</h2>
+<p>tensorflow官网链接：  <a href="https://tensorflow.google.cn/install/source_windows#gpu">https://tensorflow.google.cn/install/source_windows#gpu</a>
+<img src="/img/05/03.png" alt="图片">
+<img src="/img/05/04.png" alt="图片"></p>
+<p>在上面的一个列表中选择一个版本进行安装，我在这里选择的是安装tensorflow_gpu-2.3.0，tensorflow_gpu的版本确定了，那么一系列要安装的软件的版本都是确定的，或则说只要上面的一个软件的版本确定，其他的软件的版本也就确定了。</p>
+<p><strong>一定要按照相对应的版本。</strong>
+<strong>一定要按照相对应的版本。</strong>
+<strong>一定要按照相对应的版本。</strong></p>
+<h1 id="二安装anaconda">二、安装anaconda</h1>
+<p>这个软件在上面没有的列表中没有进行说明，那么就可以任意安装一个版本，建议安装一个较为新的一个版本。</p>
+<h2 id="1安装anaconda的好处主要为以下几点">1、安装Anaconda的好处主要为以下几点</h2>
+<p>（1）包含conda：conda是一个环境管理器，其功能依靠conda包来实现，该环境管理器与pip类似。  <br>
+（2）安装大量工具包：Anaconda会自动安装一个基本的python，该python的版本Anaconda的版本有关。该python下已经装好了一大堆工具包，这对于科学分析计算是一大便利。    <br>
+（3）可以创建使用和管理多个不同的Python版本：比如想要新建一个新框架或者使用不同于Anoconda装的基本Python版本，Anoconda就可以实现同时多个python版本的管理。      <br>
+（4）可以创建多个不同不相互关联的虚拟环境。</p>
+<h2 id="2下载">2、下载</h2>
+<p>官网地址：   <a href="https://www.anaconda.com/">https://www.anaconda.com/</a>      <br>
+点击 <strong>Get Started</strong>
+<img src="/img/05/05.png" alt="图片"></p>
+<p>点击最后一个 <strong>Download&hellip;</strong>
+<img src="/img/05/06.png" alt="图片"></p>
+<p>点击<strong>Download</strong>，下载<strong>Windons版本</strong>
+此时会弹出一个注册界面，这个可以不用管，直接关闭即可
+<img src="/img/05/07.png" alt="图片"></p>
+<p>百度网盘链接：https://pan.baidu.com/s/14dUBJwLjkhkzr-kqmbl8Rw      <br>
+提取码：rx4s</p>
+<h2 id="3安装">3、安装</h2>
+<p>点击<strong>exe</strong>文件，直接就是一直点击下一步即可
+到这个界面选择<strong>Just me</strong>,只为本电脑安装。
+<img src="/img/05/08.png" alt="图片"></p>
+<p>在途中会出现一个修改安装目录，这个可以改也可以不改，建议将其放在一个非系统盘位置，这个安装的会比较大，都是几个G起步。
+<img src="/img/05/09.png" alt="图片"></p>
+<p>这里的第一个一定要勾上，这个是自动添加该软件的环境变量到系统变量中，如果不勾上就需要自己去添加环境变量。
+第二个也要勾上，这个是建立一个默认的虚拟的python环境。这样就可以使用python进行编写代码了。
+然后在点击Install等待安装就行了。
+<img src="/img/05/10.png" alt="图片"></p>
+<h2 id="4创建一个虚拟环境">4、创建一个虚拟环境</h2>
+<p>找到Anaconda3下面的<strong>Anaconda Prompt</strong>进入一个终端       <br>
+<img src="/img/05/11.png" alt="图片"></p>
+<p>查看当前的虚拟环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">conda info --env
+</code></pre></td></tr></table>
+</div>
+</div><p>这里会显示在anaconda上已经安装好的虚拟环境，由于是第一次安装，那么就只有base这一个虚拟环境。
+<img src="/img/05/12.png" alt="图片"></p>
+<p>创建一个虚拟环境，专门用来安装tensorflow_gpu，这里的Tf_G-230就是你创建的虚拟环境的名字，这个名字可以任意取。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">conda create -n Tf_G-230 python==3.6.2
+</code></pre></td></tr></table>
+</div>
+</div><p>出现以下界面就算安装成功        <br>
+<img src="/img/05/13.png" alt="图片"></p>
+<p>激活当前虚拟环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">conda activate Tf_G-230
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/img/05/14.png" alt="图片"></p>
+<p>安装tensorflow-gpu环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pip install -i https://pypi.doubanio.com/simple/ tensorflow-gpu==2.3.0
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/img/05/15.png" alt="图片">
+安装好后出现<strong>Successfully</strong>，并且再次查看虚拟环境，里面有我们添加的即为成功
+<img src="/img/05/16.png" alt="图片"></p>
+<h2 id="5安装jupyter-notebook">5、安装Jupyter Notebook</h2>
+<p>安装好后。点击anaconda这个软件，进入该软件，按照以下步骤进行安装Jupyter Notebook，最开始Jupyter Notebook是install,安装成功后会显示<strong>Launch</strong>
+<img src="/img/05/17.png" alt="图片"></p>
+<p>进入<strong>Jupyter Notebook</strong>界面，会在默认的浏览器打开一个页面，是下面的一个界面。
+<img src="/img/05/18.png" alt="图片"></p>
+<p>该界面是调用电脑的系统盘的文件，在C:\Users\lichuan。我们点击<strong>Desktop</strong>，进入到桌面
+<img src="/img/05/19.png" alt="图片"></p>
+<p>新建一个文件夹
+<img src="/img/05/20.png" alt="图片"></p>
+<p>重命名文件夹
+<img src="/img/05/21.png" alt="图片"></p>
+<p>进入该文件夹并新建一个Notebook
+<img src="/img/05/22.png" alt="图片"></p>
+<p>命名Notebook
+<img src="/img/05/23.png" alt="图片"></p>
+<p>测试GPU环境是否安装成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="n">tensorflow_version</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">__version__</span>
+<span class="n">gpu_available</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">is_gpu_available</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tensorflow version:&#39;</span><span class="p">,</span><span class="n">tensorflow_version</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">GPU available:&#39;</span><span class="p">,</span> <span class="n">gpu_available</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>没有安装的应该是显示为False或则是其他内容。我这样是已经安装好了。
+<img src="/img/05/24.png" alt="图片"></p>
+<p>显示为False的原因：要使用电脑的GPU，就要用到英伟达的显卡，我们现在就还没有安装英伟达显卡的驱动，所以就不能使用GPU。下面就要介绍安装英伟达的内容了，这个也是最恼火的。</p>
+<h1 id="三安装cuda">三、安装CUDA</h1>
+<p>由于是外网，可能会等很久才会进入界面。      <br>
+官网：https://developer.nvidia.com/cuda-toolkit-archive                                   <br>
+我们要安装的版本为10.1，是因为这个要与我们安装的tensorflow_GPU的版本一致。
+<img src="/img/05/25.png" alt="图片"></p>
+<p>我在这里下载的CUDA Toolkit 10.1 update1 这个版本 。       <br>
+百度网盘链接：https://pan.baidu.com/s/1wrvlUwcy6hrZSihxywbUMg                           <br>
+提取码：d0ga     <br>
+接下来就是安装，这个就很简单，按照提示进行安装就行了</p>
+<h1 id="四安装cudann">四、安装CUDANN</h1>
+<p>由于是外网，可能会等很久才会进入界面。     <br>
+官网：https://developer.nvidia.com/rdp/cudnn-archive      <br>
+我们要安装的版本为<strong>7.6</strong>，是因为这个要与我们安装的tensorflow_GPU和CUDA的版本一致。
+下载<strong>cuDNN v7.6.0 [May 20.2019],for CUDA 10.1</strong>这个版本里面的<strong>cuDNN Library for Windows 10</strong>
+<img src="/img/05/26.png" alt="图片">
+<img src="/img/05/27.png" alt="图片"></p>
+<p>百度网盘链接：https://pan.baidu.com/s/1BrUUMPYgRAa1fL3jic3NaA       <br>
+提取码：wkso</p>
+<h2 id="1下载方法1">1、下载方法1</h2>
+<p>进行注册，在进行下载压缩包。由于这个方法我的注册不了。总是出错，也找不到解决方法。
+会出现红色的字样。
+<img src="/img/05/28.png" alt="图片"></p>
+<h2 id="2下载方法2">2、下载方法2</h2>
+<p>不用进行注册，直接下载压缩包，使用迅雷下载，下载后是一个压缩包，进行解压。放到一个目录下。建议放到CUDA目录下。
+<img src="/img/05/29.png" alt="图片">
+<img src="/img/05/30.png" alt="图片">
+<img src="/img/05/31.png" alt="图片"></p>
+<h2 id="3进行环境变量的配置">3、进行环境变量的配置</h2>
+<h3 id="1cudnn-101-windows10-x64-v76064cudabin">（1）cudnn-10.1-windows10-x64-v7.6.0.64/cuda/bin</h3>
+<h3 id="2cudnn-101-windows10-x64-v76064cudainclude">（2）cudnn-10.1-windows10-x64-v7.6.0.64/cuda/include/</h3>
+<h3 id="3cudnn-101-windows10-x64-v76064cudalibx64">（3）cudnn-10.1-windows10-x64-v7.6.0.64/cuda/lib/x64</h3>
+<p>将上面三个配置到环境变量中
+<img src="/img/05/32.png" alt="图片"></p>
+<p>找到<strong>CUDA</strong>和<strong>CUDNN</strong>的安装目录
+<img src="/img/05/33.png" alt="图片">
+<img src="/img/05/34.png" alt="图片"></p>
+<p>将<strong>CUDNN</strong>目录下的文件夹的文件复制到<strong>CUDA</strong>目录下的相同的文件夹的文件
+<img src="/img/05/35.png" alt="图片">
+<img src="/img/05/36.png" alt="图片">
+<img src="/img/05/37.png" alt="图片"></p>
+<h1 id="五最后现象">五、最后现象</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
+<span class="n">gpu</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+<span class="n">tensorflow_version</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">__version__</span>
+<span class="n">gpu_available</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">is_gpu_available</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">gpu</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tensorflow version:&#39;</span><span class="p">,</span><span class="n">tensorflow_version</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">GPU available:&#39;</span><span class="p">,</span> <span class="n">gpu_available</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/img/05/38.png" alt="图片"></p>
+<p>True：就表示安装成功，现在就可以使用GPU环境了
+​</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">木子川</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2023-01-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/04-%E5%AE%8C%E5%85%A8%E5%BC%84%E6%87%82%E5%A6%82%E4%BD%95%E7%94%A8pycharm%E5%AE%89%E8%A3%85pyqt5%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">完全弄懂如何用pycharm安装pyqt5及其相关配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/03-pygame%E4%BD%BF%E7%94%A8%E4%B8%89pygame%E5%B0%8F%E6%B8%B8%E6%88%8F%E6%8E%A5%E7%90%83%E5%B0%8F%E6%B8%B8%E6%88%8F/">
+            <span class="next-text nav-default">Pygame使用三:Pygame小游戏（接球小游戏）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+    <script src="https://utteranc.es/client.js"
+            repo="mzc421/mzc421.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterances.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="m21z50c71@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/mzc421" class="iconfont icon-github" title="github"></a>
+  <a href="https://mzc421.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>木子川</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
